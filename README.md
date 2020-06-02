@@ -27,6 +27,8 @@ Em backend:
 - ```npm install ts-node -D``` para node entender typescript ```npx ts-node src/server.ts``` para executar
 - ```npm install ts-node-dev -D``` parecido com o nodemon ```npx ts-node-dev src/server.ts``` para executar
 - ```npm install express``` tipagem: ```npm install @types/express -D```
+- ```npm install knex``` para querys de banco de dados
+- ```npm install sqlite3```
 
 Em frontend:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
