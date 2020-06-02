@@ -20,6 +20,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Request param: Parâmetrnos que vem na própria rota que identificam um recurso;
 - Query param: Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação;
 - Request body: Parâemtros para criação/atualização de informações.
+
 ## Dependências
 Em backend:
 - ```npm install typescript -D```
@@ -29,6 +30,7 @@ Em backend:
 - ```npm install express``` tipagem: ```npm install @types/express -D```
 - ```npm install knex``` para querys de banco de dados
 - ```npm install sqlite3```
+- ```npx knex migrate:latest --knexfile knexfile.ts``` para rodar migration
 
 Em frontend:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
