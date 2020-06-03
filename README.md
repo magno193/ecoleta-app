@@ -31,6 +31,7 @@ Em backend:
 - ```npm install knex``` para querys de banco de dados
 - ```npm install sqlite3```
 - ```npx knex migrate:latest --knexfile knexfile.ts``` para rodar migration
+- ```npm install cors```
 
 Em frontend:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
