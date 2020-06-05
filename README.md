@@ -35,3 +35,5 @@ Em backend:
 
 Em frontend:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
+- Para icones: ```npm install react-icons```
+- Para roteamento: ```npm install react-router-dom```
