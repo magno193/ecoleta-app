@@ -38,3 +38,4 @@ Em frontend:
 - Para icones: ```npm install react-icons```
 - Para roteamento: ```npm install react-router-dom```
 - Para mapa: ```npm install leaflet react-leaflet```
+- Para conversar com dados de outra api: ```npm install axios```
