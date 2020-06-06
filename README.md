@@ -10,11 +10,17 @@ Estrutura que retorna apenas os dados pelo response em formato JSON, dividino um
 ### Typescript
 Javascript com possibilidade de adicionar tipagens.
 
-### React
+### ReactJS
 Componentização de elementos frontend e de interface.
 
 ### React Native
 A interface gerada é nativa com a utilização de código javascript.
+
+#### Diferenças com ReactJS
+- Não existe as tags como p span e etc, é todo atribuido com Text, por exemplo;
+- Não existe o css tradicional, é utilizado o StyleSheet próprio do React Native, que é um objeto javascript. As propriedades css são escritas em camelCase, entretando, as propriedades css são parecidas;
+- Todos os elementos já possuem display flex por natureza;
+- Não existe cascata e herança de estilos.
 
 ### Parâmetros de Rotas
 - Request param: Parâmetrnos que vem na própria rota que identificam um recurso;
@@ -38,4 +44,8 @@ Em frontend:
 - Para icones: ```npm install react-icons```
 - Para roteamento: ```npm install react-router-dom```
 - Para mapa: ```npm install leaflet react-leaflet```
-- Para conversar com dados de outra api: ```npm install axios```
+- Para conversar com dados de outra api: ```npm install axios```7
+
+Em mobile:
+- Pacote expo: ```npm install -g expo-cli```
+- Iniciar pacote expo no projeto: ```expo init mobile``` selecione blank typescript
