@@ -50,3 +50,6 @@ Em mobile:
 - Pacote expo: ```npm install -g expo-cli```
 - Iniciar pacote expo no projeto: ```expo init mobile``` selecione blank typescript
 - Pacote de fontes para mobile: ```expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto```
+- Pacote para navegação: ```npm install @react-navigation/native```
+- ```expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view```
+- ```npm install @react-navigation/stack```
