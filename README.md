@@ -2,7 +2,7 @@
 Projeto da Next Level Week da Rocketseat
 
 ## API RESTful
-Estrutura que retorna apenas os dados pelo response em formato JSON, dividino uma estrutura para frontend e backend.
+Estrutura que retorna apenas os dados pelo response em formato JSON, dividindo uma estrutura para frontend e backend.
 - Frontend com ReactJS;
 - Backend com NodeJS;
 - Mobile com React Native e Expo.
@@ -49,3 +49,4 @@ Em frontend:
 Em mobile:
 - Pacote expo: ```npm install -g expo-cli```
 - Iniciar pacote expo no projeto: ```expo init mobile``` selecione blank typescript
+- Pacote de fontes para mobile: ```expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto```
