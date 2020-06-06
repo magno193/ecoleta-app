@@ -28,7 +28,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Request body: Parâemtros para criação/atualização de informações.
 
 ## Dependências
-Em backend:
+*Em backend*:
 - ```npm install typescript -D```
 - ```npx tsc --init``` inicializar arquivo de configuração do typescript
 - ```npm install ts-node -D``` para node entender typescript ```npx ts-node src/server.ts``` para executar
@@ -39,14 +39,14 @@ Em backend:
 - ```npx knex migrate:latest --knexfile knexfile.ts``` para rodar migration
 - ```npm install cors```
 
-Em frontend:
+*Em frontend*:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
 - Para icones: ```npm install react-icons```
 - Para roteamento: ```npm install react-router-dom```
 - Para mapa: ```npm install leaflet react-leaflet```
-- Para conversar com dados de outra api: ```npm install axios```7
+- Para conversar com dados de outra api: ```npm install axios```
 
-Em mobile:
+*Em mobile*:
 - Pacote expo: ```npm install -g expo-cli```
 - Iniciar pacote expo no projeto: ```expo init mobile``` selecione blank typescript
 - Pacote de fontes para mobile: ```expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto```
@@ -55,4 +55,5 @@ Em mobile:
 - ```npm install @react-navigation/stack```
 - Mapa: ```expo install react-native-maps```
 -```expo install constants ```
-- Suporte para imagem svg: ```expo install react-native-svg``` 
+- Suporte para imagem svg: ```expo install react-native-svg```
+- Para conversar com dados de outra api: ```npm install axios```
