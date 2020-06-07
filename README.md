@@ -1,5 +1,5 @@
 # ECOLETA
-Projeto da Next Level Week da Rocketseat
+Projeto da Next Level Week 1 (NLW01) da Rocketseat
 
 ## API RESTful
 Estrutura que retorna apenas os dados pelo response em formato JSON, dividindo uma estrutura para frontend e backend.
@@ -27,8 +27,19 @@ A interface gerada é nativa com a utilização de código javascript.
 - Query param: Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação;
 - Request body: Parâemtros para criação/atualização de informações.
 
+### Deploy
+**Deploy com backend**, pode ser utilizado:
+- Heroku (Free para desenvolvimento);
+- Digital Ocean (Bom para produção de inicio);
+- AWS / Google Cloud / Microsoft Azure (Para aplicação de grande escala).
+
+**Deploy frontend** (arquivos estáticos) pode ser utilizado:
+- Netlify (Plano starter free)
+- Vercel (Parecido com netfly)
+- Amazon S3 / Google Cloud Storage (Para aplicações maiores)
+
 ## Dependências
-*Em backend*:
+**Em backend**:
 - ```npm install typescript -D```
 - ```npx tsc --init``` inicializar arquivo de configuração do typescript
 - ```npm install ts-node -D``` para node entender typescript ```npx ts-node src/server.ts``` para executar
@@ -42,7 +53,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Futuro: Serialização e API Transform
 - Validação: Yup, Joi ou Celebrate: ```npm install celebrate``` types: ```npm install @types/hapi__joi -D```
 
-*Em frontend*:
+**Em frontend**:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
 - Para icones: ```npm install react-icons```
 - Para roteamento: ```npm install react-router-dom```
@@ -50,7 +61,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Para conversar com dados de outra api: ```npm install axios```
 - "Drop" de imagens:  ```npm install react-dropzone```
 
-*Em mobile*:
+**Em mobile**:
 - Pacote expo: ```npm install -g expo-cli```
 - Iniciar pacote expo no projeto: ```expo init mobile``` selecione blank typescript
 - Pacote de fontes para mobile: ```expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto```
