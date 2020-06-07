@@ -23,7 +23,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Não existe cascata e herança de estilos.
 
 ### Parâmetros de Rotas
-- Request param: Parâmetrnos que vem na própria rota que identificam um recurso;
+- Request param: Parâmetros que vem na própria rota que identificam um recurso;
 - Query param: Parâmetros que vem na própria rota geralmente opcionais para filtros, paginação;
 - Request body: Parâemtros para criação/atualização de informações.
 
