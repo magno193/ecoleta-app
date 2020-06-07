@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
-import { Text, View, Image, StyleSheet, ScrollView, Alert } from 'react-native';
+import { Text, View, Image, StyleSheet, ScrollView, Alert, PointPropType } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -15,11 +15,21 @@ interface Item {
     image_url: string;
 }
 
+interface Point {
+    id: number,
+    name: string,
+    image: string,
+    latitude: number,
+    longitude: number,
+}
+
 const Points = () => {
     const [items, setItems] = useState<Item[]>([])
     const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
-    const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0])
+    const [points, setPoints] = useState<Point[]>([])
+
+    const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0])
 
     const navigation = useNavigation();
 
@@ -29,35 +39,49 @@ const Points = () => {
             console.log(response.data);
         });
     }, []);
-    
+
     useEffect(() => {
         async function loadPosition() {
-          const { status } = await Location.requestPermissionsAsync();
-    
-          if (status !== "granted") {
-            Alert.alert(
-              "Ooooops...",
-              "Precisamos de sua permissão para obter a localização"
-            );
-            return;
-          }
-    
-          const location = await Location.getCurrentPositionAsync({ enableHighAccuracy: true })
-    
-          const { latitude, longitude } = location.coords;
-    
-          setInitialPosition([latitude, longitude]);
+            const { status } = await Location.requestPermissionsAsync();
+
+            if (status !== "granted") {
+                Alert.alert(
+                    "Ooooops...",
+                    "Precisamos de sua permissão para obter a localização"
+                );
+                return;
+            }
+
+            const location = await Location.getCurrentPositionAsync({ enableHighAccuracy: true })
+
+            const { latitude, longitude } = location.coords;
+
+            setInitialPosition([latitude, longitude]);
         }
-    
+
         loadPosition();
-      });
+    }, []);
+
+    useEffect(() => {
+        api.get('points', {
+            params: {
+                city: 'Botucatu',
+                uf: 'SP',
+                items: [1, 2]
+            }
+
+        }).then(response => {
+            setPoints(response.data)
+        })
+    }, [])
+
 
     function handleNavigateBack() {
         navigation.goBack();
     }
 
-    function handleNavigateToDetail() {
-        navigation.navigate('Detail');
+    function handleNavigateToDetail(id: number) {
+        navigation.navigate('Detail', { point_id: id });
     }
 
     function handleSelectedItem(id: number) {
@@ -68,7 +92,7 @@ const Points = () => {
 
             setSelectedItems(filteredItems)
         } else {
-            setSelectedItems([ ...selectedItems, id ])
+            setSelectedItems([...selectedItems, id])
         }
 
     }
@@ -86,31 +110,35 @@ const Points = () => {
                 <View style={styles.mapContainer}>
                     {initialPosition[0] !== 0 && (
                         <MapView
-                        style={styles.map}
-                        initialRegion={{
-                            latitude: initialPosition[0],
-                            longitude: initialPosition[1],
-                            latitudeDelta: 0.014,
-                            longitudeDelta: 0.014,
-                        }}
-                    >
-                        <Marker
-                            style={styles.mapMarker}
-                            onPress={handleNavigateToDetail}
-                            coordinate={{
-                                latitude: -22.9038625,
-                                longitude: -48.4448011,
+                            style={styles.map}
+                            initialRegion={{
+                                latitude: initialPosition[0],
+                                longitude: initialPosition[1],
+                                latitudeDelta: 0.014,
+                                longitudeDelta: 0.014,
                             }}
                         >
-                            <View style={styles.mapMarkerContainer}>
-                                <Image
-                                    style={styles.mapMarkerImage}
-                                    source={{ uri: 'https://images.unsplash.com/photo-1477763858572-cda7deaa9bc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60' }}
-                                />
-                                <Text style={styles.mapMarkerTitle}>Mercado</Text>
-                            </View>
-                        </Marker>
-                    </MapView>
+                            {points.map(point => (
+                                <Marker
+                                    key={String(point.id)}
+                                    style={styles.mapMarker}
+                                    onPress={() => handleNavigateToDetail(point.id)}
+                                    coordinate={{
+                                        latitude: point.latitude,
+                                        longitude: point.longitude,
+                                    }}
+                                >
+                                    <View style={styles.mapMarkerContainer}>
+                                        <Image
+                                            style={styles.mapMarkerImage}
+                                            source={{ uri: point.image }}
+                                        />
+                                        <Text style={styles.mapMarkerTitle}>{point.name}</Text>
+                                    </View>
+                                </Marker>
+
+                            ))}
+                        </MapView>
                     )}
                 </View>
 
@@ -120,7 +148,7 @@ const Points = () => {
                 <ScrollView
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{paddingHorizontal: 20}}
+                    contentContainerStyle={{ paddingHorizontal: 20 }}
                 >
                     {items.map(item => (
                         <TouchableOpacity
