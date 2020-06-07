@@ -38,6 +38,8 @@ A interface gerada é nativa com a utilização de código javascript.
 - ```npm install sqlite3```
 - ```npx knex migrate:latest --knexfile knexfile.ts``` para rodar migration
 - ```npm install cors```
+- Upload de imagens: ```npm install multer```
+- Futuro: Serialização e API Transform
 
 *Em frontend*:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
@@ -45,6 +47,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - Para roteamento: ```npm install react-router-dom```
 - Para mapa: ```npm install leaflet react-leaflet```
 - Para conversar com dados de outra api: ```npm install axios```
+- "Drop" de imagens:  ```npm install react-dropzone```
 
 *Em mobile*:
 - Pacote expo: ```npm install -g expo-cli```
