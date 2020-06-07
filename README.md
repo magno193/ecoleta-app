@@ -59,3 +59,4 @@ A interface gerada é nativa com a utilização de código javascript.
 - Para conversar com dados de outra api: ```npm install axios```
 - Geolocalização: ```expo install expo-location```
 - Email: ```expo install expo-mail-composer```
+- (Desafio) Tag Select: ```npm install react-native-picker-select```
