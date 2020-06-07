@@ -123,7 +123,6 @@ const CreatePoint = () => {
         const items = selectedItems;
 
         const data = new FormData();
-
         data.append('name', name);
         data.append('email', name);
         data.append('whatsapp', name);
@@ -135,8 +134,8 @@ const CreatePoint = () => {
         if (selectedFile) {
             data.append('image', selectedFile);
         }  
-
-
+        
+        /*JSON*/
         // const data = {
         //     name,
         //     email,

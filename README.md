@@ -40,6 +40,7 @@ A interface gerada é nativa com a utilização de código javascript.
 - ```npm install cors```
 - Upload de imagens: ```npm install multer```
 - Futuro: Serialização e API Transform
+- Validação: Yup, Joi ou Celebrate: ```npm install celebrate``` types: ```npm install @types/hapi__joi -D```
 
 *Em frontend*:
 - Pacote para começar app react: ```npx create-react-app web --template=typescript```
