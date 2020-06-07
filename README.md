@@ -57,4 +57,5 @@ A interface gerada é nativa com a utilização de código javascript.
 -```expo install constants ```
 - Suporte para imagem svg: ```expo install react-native-svg```
 - Para conversar com dados de outra api: ```npm install axios```
-- Geolocalização: ```expo install expo-location``` 
+- Geolocalização: ```expo install expo-location```
+- Email: ```expo install expo-mail-composer```
