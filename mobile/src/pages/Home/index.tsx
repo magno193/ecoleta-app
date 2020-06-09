@@ -23,14 +23,14 @@ const Home = () => {
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
           <View>
-            <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
-            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</Text>
+            <Text style={styles.title}>Your waste collection marketplace</Text>
+            <Text style={styles.description}>We help people find collection points efficiently</Text>
           </View>
         </View>
 
         <View style={styles.footer}>
-          <TextInput style={styles.input} placeholder='Digite a UF' maxLength={2} autoCapitalize='characters' autoCorrect={false} value={uf} onChangeText={text => setUf(text)}/>
-          <TextInput style={styles.input} placeholder='Digite a Cidade' value={city} autoCorrect={false} onChangeText={text => setCity(text)} />
+          <TextInput style={styles.input} placeholder='State' maxLength={2} autoCapitalize='characters' autoCorrect={false} value={uf} onChangeText={text => setUf(text)}/>
+          <TextInput style={styles.input} placeholder='City' value={city} autoCorrect={false} onChangeText={text => setCity(text)} />
           <RectButton style={styles.button} onPress={handleNavigateToPoints} >
             <View style={styles.buttonIcon}>
               <Text>
@@ -38,7 +38,7 @@ const Home = () => {
               </Text>
             </View>
             <Text style={styles.buttonText}>
-              Entrar
+              Log in
           </Text>
           </RectButton>
 

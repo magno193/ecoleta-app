@@ -160,22 +160,22 @@ const CreatePoint = () => {
 
                 <Link to="/">
                     <FiArrowLeft />
-                    Voltar para a Home
+                    Go back to Home
                 </Link>
             </header>
 
             <form onSubmit={handleSubmit}>
-                <h1>Cadastro do<br />ponto de coleta</h1>
+                <h1>Registration of<br />the collection point</h1>
 
                 <Dropzone onFileUploaded={setSelectedFile}/>
 
                 <fieldset>
                     <legend>
-                        <h2>Dados</h2>
+                        <h2>Data</h2>
                     </legend>
 
                     <div className="field">
-                        <label htmlFor="name">Nome da entidade</label>
+                        <label htmlFor="name">Entity name</label>
                         <input type="text" name="name" id="name" onChange={handleInputChange}/>
                     </div>
 
@@ -194,8 +194,8 @@ const CreatePoint = () => {
 
                 <fieldset>
                     <legend>
-                        <h2>Endereço</h2>
-                        <span>Selecione o endereço no mapa</span>
+                        <h2>Address</h2>
+                        <span>Select the address on the map</span>
                     </legend>
                     <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
                         <TileLayer
@@ -207,18 +207,18 @@ const CreatePoint = () => {
                     </Map>
                     <div className="field-group">
                         <div className="field">
-                            <label htmlFor="uf">Estado (UF)</label>
+                            <label htmlFor="uf">State</label>
                             <select name="uf" id="uf" value={selectedUf} onChange={handleSelectUf}>
-                                <option value="0">Selecione uma UF</option>
+                                <option value="0">Select a state</option>
                                 {ufs.map(uf => (
                                     <option key={uf} value={uf}>{uf}</option>
                                 ))}
                             </select>
                         </div>
                         <div className="field">
-                            <label htmlFor="city">Cidade</label>
+                            <label htmlFor="city">City</label>
                             <select name="city" id="city" value={selectedCity} onChange={handleSelectCity}>
-                                <option value="0">Selecione uma cidade</option>
+                                <option value="0">Select a city</option>
                                 {cities.map(city => (
                                     <option key={city} value={city}>{city}</option>
                                 ))}
@@ -229,8 +229,8 @@ const CreatePoint = () => {
 
                 <fieldset>
                     <legend>
-                        <h2>Ítens de coleta</h2>
-                        <span>Selecione um ou mais ítens abaixo</span>
+                        <h2>Collection items</h2>
+                        <span>Select one or more items below</span>
                     </legend>
                     <ul className="items-grid">
                         {items.map(item => (
@@ -246,7 +246,7 @@ const CreatePoint = () => {
 
                     </ul>
 
-                    <button type="submit">Cadastrar ponto de coleta</button>
+                    <button type="submit">Register a new collection point</button>
                 </fieldset>
             </form>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
-import { Text, View, Image, StyleSheet, ScrollView, Alert, PointPropType } from 'react-native';
+import { Text, View, Image, StyleSheet, ScrollView, Alert } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -112,8 +112,8 @@ const Points = () => {
                     <Icon name="arrow-left" size={20} color="#34cb79" />
                 </TouchableOpacity>
 
-                <Text style={styles.title}>Bem vindo</Text>
-                <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
+                <Text style={styles.title}>Welcome</Text>
+                <Text style={styles.description}>Find a collection point on the map.</Text>
 
                 <View style={styles.mapContainer}>
                     {initialPosition[0] !== 0 && (

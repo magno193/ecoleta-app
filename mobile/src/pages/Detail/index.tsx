@@ -62,16 +62,16 @@ const Detail = () => {
     }
 
     return (
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
                 <TouchableOpacity onPress={handleNavigateBack}>
                     <Icon name='arrow-left' size={20} color='#34cb79' />
                 </TouchableOpacity>
 
                 <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
-    <Text style={styles.pointName}>{data.point.name}</Text>
+                <Text style={styles.pointName}>{data.point.name}</Text>
                 <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
-                    
+
                 <View>
                     <Text style={styles.addressTitle}>{data.point.city}</Text>
                     <Text style={styles.addressContent}>{data.point.uf}</Text>
